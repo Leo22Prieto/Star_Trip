@@ -24,7 +24,7 @@ trips = [
   { destination: 'Venus', departure_date: '10-09-2024', arrival_date: '30-01-2025', number_of_passengers: 8, description: VENUS, price: 290_000, company: spacex },
   { destination: 'Mars', departure_date: '01-02-2023', arrival_date: '15-06-2025', number_of_passengers: 12, description: MARS, price: 4_550_000, company: spacex },
   { destination: 'Jupiter', departure_date: '04-08-2023', arrival_date: '15-04-2026', number_of_passengers: 10, description: JUPITER, price: 3_000_000, company: voyager },
-  { destination: 'Saturn', departure_date: '10-03-2024', arrival_date: '17-05-2027', number_of_passengers: 25, description: SATURN, price: 2_500_000, company: voyager },
+  { destination: 'Saturne', departure_date: '10-03-2024', arrival_date: '17-05-2027', number_of_passengers: 25, description: SATURN, price: 2_500_000, company: voyager },
   { destination: 'Uranus', departure_date: '10-09-2024', arrival_date: '30-01-2025', number_of_passengers: 22, description: URANUS, price: 2_300_000, company: voyager },
   { destination: 'Neptune', departure_date: '10-09-2024', arrival_date: '30-01-2025', number_of_passengers: 15, description: NEPTUNE, price: 3_000_000, company: voyager}
 ]
