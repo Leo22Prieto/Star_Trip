@@ -1,0 +1,31 @@
+<div class="col mt-4 container-show">
+  <div class="card p-3 card-show" style="background-color: rgba(245, 245, 245, 0); border-color: rgba(245, 245, 245, 0.5)">
+    <% case @trip.destination %>
+    <% when "Pluton" %>
+      <div class="fiche--pluto fiche-show">
+    <% when "Mercure" %>
+      <div class="fiche--mercury fiche-show">
+    <% when "Mars" %>
+      <div class="fiche--mars fiche-show">
+    <% when "Jupiter" %>
+      <div class="fiche--jupiter fiche-show">
+    <% when "Saturne" %>
+      <div class="fiche--saturn fiche-show">
+    <% when "Uranus" %>
+      <div class="fiche--uranus fiche-show">
+    <% when "Neptune" %>
+      <div class="fiche--neptune fiche-show">
+    <% when "Venus" %>
+      <div class="fiche--venus fiche-show">
+    <% end %>
+      <div class="planet__atmosphere">
+      <div class= "planet__surface"></div>
+  </div>
+  <div class="card-body p-3 fiche-text">
+    <h5 class="card-title text-center border-bottom border-dark p-3"><%= @trip.destination %></h5>
+    <p class="card-text"> depArt: <%= @trip.departure_date %></p>
+    <p class="card-text"> arRivée: <%= @trip.arrival_date %></p>
+    <p class="card-text"> priX: <%= @trip.price %></p>
+  </div>
+</div>
+  <p type="button"><%= link_to "RESERVER", booking_path %></p>
