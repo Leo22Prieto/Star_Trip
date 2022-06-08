@@ -1,12 +1,40 @@
+#navbar-example2 {
+  background-color: #000;
+  box-shadow: 41px 0px 56px #fff;
+  height: 86px;
+  z-index: 1000;
+}
 #startrip-logo-navbar {
   width: 165px;
+  transition: transform .2s;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 .nav-link {
   color:  #fff !important;
   i {
     font-size: 25px;
+    transition: transform .2s;
+  }
+  i:hover {
+    transform: scale(1.5);
   }
 }
 .nav-link:hover {
   font-weight: bold !important;
 }
+
+
+// .zoom {
+//   padding: 50px;
+//   background-color: green;
+//   transition: transform .2s; /* Animation */
+//   width: 200px;
+//   height: 200px;
+//   margin: 0 auto;
+// }
+
+// .zoom:hover {
+//   transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+// }

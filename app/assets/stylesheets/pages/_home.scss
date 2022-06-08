@@ -5,16 +5,21 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 .body-home {
+  display: flex;
+  align-items: center;
   position: relative;
   background-image: url("space-galaxy-background.jpg");
   background-size: cover;
   background-position: center;
-  height: 700px;
-  .btn {
-    position: absolute;
-    right: 46%;
-    top: 80vh;
-  }
+  height: calc(100vh - 86px);
+  overflow: hidden;
+}
+.home-btn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  transform: translateY(250px);
 }
 .container {
 	width: 100%;
@@ -23,7 +28,10 @@ body {
 }
 a {
 	text-decoration: none;
-  color: white;
+  color: #fff;
+}
+a:hover {
+  color: #fff;
 }
 h1.main, p.demos {
 	-webkit-animation-delay: 18s;
@@ -32,7 +40,7 @@ h1.main, p.demos {
 	animation-delay: 18s;
 }
 .sp-container {
-	position: fixed;
+	position: absolute;
 	top: 10%;
 	left: 0px;
 	width: 100%;
