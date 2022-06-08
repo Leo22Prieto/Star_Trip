@@ -1,12 +1,12 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+#startrip-logo-navbar {
+  width: 165px;
 }
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.nav-link {
+  color:  #fff !important;
+  i {
+    font-size: 25px;
+  }
 }
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-link:hover {
+  font-weight: bold !important;
 }
