@@ -1,2 +1,106 @@
 // Import page-specific CSS files here.
 @import "home";
+
+
+
+$solarSystem: ("pluto", "mercury", "venus");
+
+//Planet propeties
+:root {
+  --pluto-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/pluto.jpg);
+  --pluto-tilt: rotate(122.5deg);
+  --pluto-day: 153.3;
+  --pluto-color: #c3b6aa;
+  --mercury-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/mercury2.jpg);
+  --mercury-tilt: rotate(0.034deg);
+  --mercury-day: 1407.6;
+  --mercury-color: #999999;
+  --venus-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/venus2.jpg);
+  --venus-tilt: rotate(177.3deg);
+  --venus-day: 5832.5;
+  --venus-color: #e8cda2;
+}
+
+//Mixin for styling each planet
+@mixin planetization {
+  @each $planet in $solarSystem {
+    &--#{$planet} {
+      .planet__atmosphere {
+        box-shadow: inset 10px 0px 12px -2px rgba(255,255,255,.2),
+                    inset -70px 0px 50px 0px black,
+                    -5px 0px 10px -4px var(--#{$planet}-color);
+      }
+      .planet__surface {
+        background-image: var(--#{$planet}-image);
+        transform: var(--#{$planet}-tilt)scale(1.2);
+        animation: planetRotate calc(var(--#{$planet}-day)*.1s) linear infinite;
+      }
+    }
+	}
+}
+
+//Planet rotation animation
+@keyframes planetRotate {
+  0%{
+    background-position: 0% center;
+  }
+  100%{
+    background-position: -200% center;
+  }
+}
+// End definitions
+//---------------------------
+//Start styles
+
+.fiche {
+  @include planetization;
+}
+
+
+.planet {
+  &__atmosphere {
+    height: 243px;
+    width: 243px;
+    position: relative;
+    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,.3) 0%, rgba(255,255,255,0) 65%);
+    border-radius: 122px;
+    overflow: hidden;
+    transition: 0.3s;
+
+  }
+  &__surface{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+  }
+}
+
+
+
+
+
+// Basic tags
+
+.card:hover {
+  .planet__atmosphere {
+    height: 260px;
+    width: 260px;
+    border-radius: 130px;
+  }
+}
+
+h5 {
+  font-family: 'Major Mono Display';
+}
+
+p {
+  font-family: "Major Mono Display";
+  font-size: 15px;
+}
+
+body {
+  background: #000000;
+  color: #fff;
+}
