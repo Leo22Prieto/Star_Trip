@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
       flash.alert = "Congratulations! You have booked a trip to #{@trip.destination}. "
       redirect_to root_path
     else
-    render :new
+      render :new
     end
   end
 end

@@ -13,6 +13,21 @@
   </head>
 
   <body>
+    <nav id="navbar-example2" class="navbar px-3" style="background-color: #000; box-shadow: 41px 0px 56px white; height: 86px">
+    <%= link_to root_path, class:"link-logo" do %>
+      <%= image_tag "logo_startrip_white.png", id:"startrip-logo-navbar" %>
+    <% end %>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading1"><i class="fas fa-user-astronaut"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading2"><i class="fas fa-arrow-right"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+  </div>
     <%= yield %>
   </body>
 </html>
