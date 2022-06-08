@@ -4,15 +4,15 @@
       <%= link_to trip_path(trip) do %>
         <div class="card p-3" style="background-color: rgba(245, 245, 245, 0); border-color: rgba(245, 245, 245, 0.5)">
           <% case trip.destination %>
-          <% when "Pluton" %>
+          <% when "Pluto" %>
             <div class="fiche--pluto">
-          <% when "Mercure" %>
+          <% when "Mercury" %>
             <div class="fiche--mercury">
           <% when "Mars" %>
             <div class="fiche--mars">
           <% when "Jupiter" %>
             <div class="fiche--jupiter">
-          <% when "Saturne" %>
+          <% when "Saturn" %>
             <div class="fiche--saturn">
           <% when "Uranus" %>
             <div class="fiche--uranus">
@@ -20,14 +20,17 @@
             <div class="fiche--neptune">
           <% when "Venus" %>
             <div class="fiche--venus">
+          <% when "Sun" %>
+            <div class="fiche--sun">
           <% end %>
             <div class="planet__atmosphere">
               <div class= "planet__surface"></div>
             </div>
             <div class="card-body p-3 fiche-text">
               <h5 class="card-title text-center border-bottom border-dark p-3"><%= trip.destination %></h5>
-              <p class="card-text"> depArt: <%= trip.departure_date %></p>
-              <p class="card-text"> arRivée: <%= trip.arrival_date %></p>
+              <p class="card-text"> depArture: <%= trip.departure_date %></p>
+              <p class="card-text"> arriVal: <%= trip.arrival_date %></p>
+              <p class="card-text"> pRice: <%= trip.price %></p>
             </div>
           </div>
         </div>

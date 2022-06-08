@@ -6,11 +6,14 @@ class TripsController < ApplicationController
   end
 
   def new
+    @company = Company.find(params[:company_id])
     @trip = Trip.new
   end
 
   def create
     @trip = Trip.new(trip_params)
+    @company = Company.find(params[:company_id])
+    @trip.company = @company
     if @trip.save
       redirect_to trip_path(@trip), notice: 'Trip was successfully created'
     else
@@ -41,7 +44,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  def trips_params
+  def trip_params
     params.require(:trip).permit(:destination, :arrival_date, :departure_date, :number_of_passengers, :description, :price, :url_image)
   end
 end
