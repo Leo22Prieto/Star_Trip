@@ -19,13 +19,17 @@
       <div class="fiche--venus fiche-show">
     <% end %>
       <div class="planet__atmosphere">
-      <div class= "planet__surface"></div>
-  </div>
-  <div class="card-body p-3 fiche-text">
-    <h5 class="card-title text-center border-bottom border-dark p-3"><%= @trip.destination %></h5>
-    <p class="card-text"> depArt: <%= @trip.departure_date %></p>
-    <p class="card-text"> arRivée: <%= @trip.arrival_date %></p>
-    <p class="card-text"> priX: <%= @trip.price %></p>
+        <div class= "planet__surface"></div>
+      </div>
+      <div class="card-body p-3 fiche-text fiche-text-show">
+        <h5 class="card-title text-center border-bottom border-dark p-3"><%= @trip.destination %></h5>
+        <p class="card-text card-text-show"> depArtuRe: <%= @trip.departure_date %></p>
+        <p class="card-text card-text-show"> arRivAl: <%= @trip.arrival_date %></p>
+        <p class="card-text card-text-show"><%= @trip.description %></p>
+        <p class="card-text card-text-show"> priCe: <%= @trip.price %></p>
+        <p class="card-text card-text-show"> pAssengeRs: <%= @trip.number_of_passengers %></p>
+      </div>
+    </div>
   </div>
 </div>
   <p type="button"><%= link_to "RESERVER", booking_path %></p>
