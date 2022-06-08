@@ -3,14 +3,10 @@
 
 
 
-$solarSystem: ("pluto", "mercury", "venus");
+$solarSystem: ("mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto");
 
 //Planet propeties
 :root {
-  --pluto-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/pluto.jpg);
-  --pluto-tilt: rotate(122.5deg);
-  --pluto-day: 153.3;
-  --pluto-color: #c3b6aa;
   --mercury-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/mercury2.jpg);
   --mercury-tilt: rotate(0.034deg);
   --mercury-day: 1407.6;
@@ -19,6 +15,30 @@ $solarSystem: ("pluto", "mercury", "venus");
   --venus-tilt: rotate(177.3deg);
   --venus-day: 5832.5;
   --venus-color: #e8cda2;
+  --mars-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/mars.jpg);
+  --mars-tilt: rotate(25.2deg);
+  --mars-day: 24.6;
+  --mars-color: #c07158;
+  --jupiter-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/jupiter.jpg);
+  --jupiter-tilt: rotate(3.1deg);
+  --jupiter-day: 9.9;
+  --jupiter-color: #c9b5a4;
+  --saturn-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/saturn.jpg);
+  --saturn-tilt: rotate(26.7deg);
+  --saturn-day: 10.7;
+  --saturn-color: #f0e2c4;
+  --uranus-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/uranus2.jpg);
+  --uranus-tilt: rotate(97.8deg);
+  --uranus-day: 17.2;
+  --uranus-color: #b8d8e1;
+  --neptune-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/neptune.jpg);
+  --neptune-tilt: rotate(28.3deg);
+  --neptune-day: 16.1;
+  --neptune-color: #5e73bb;
+  --pluto-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/pluto.jpg);
+  --pluto-tilt: rotate(122.5deg);
+  --pluto-day: 153.3;
+  --pluto-color: #c3b6aa;
 }
 
 //Mixin for styling each planet
@@ -34,6 +54,9 @@ $solarSystem: ("pluto", "mercury", "venus");
         background-image: var(--#{$planet}-image);
         transform: var(--#{$planet}-tilt)scale(1.2);
         animation: planetRotate calc(var(--#{$planet}-day)*.1s) linear infinite;
+      }
+      .fiche-text:hover {
+        color: var(--#{$planet}-color);
       }
     }
 	}
@@ -89,6 +112,7 @@ $solarSystem: ("pluto", "mercury", "venus");
     width: 260px;
     border-radius: 130px;
   }
+  font-style: italic;
 }
 
 h5 {
