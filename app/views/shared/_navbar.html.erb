@@ -4,10 +4,15 @@
     <% end %>
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link" href="#scrollspyHeading1"><i class="fas fa-user-astronaut"></i></a>
+        <%= link_to new_user_session_path do %>
+        <i class="fas fa-user-astronaut"></i>
+        <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#scrollspyHeading2"><i class="fas fa-sign-out-alt"></i></a>
+       <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+
       </li>
     </ul>
   </nav>
