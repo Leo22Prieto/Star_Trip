@@ -37,7 +37,7 @@ class TripsController < ApplicationController
   private
 
   def set_trip
-    @trip = Trip.find(params[:trip_id])
+    @trip = Trip.find(params[:id])
   end
 
   def trips_params
