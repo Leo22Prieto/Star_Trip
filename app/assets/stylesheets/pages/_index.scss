@@ -3,7 +3,6 @@
 @import "show";
 
 $solarSystem: ("mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto", "sun");
-
 //Planet propeties
 :root {
   --mercury-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/mercury2.jpg);
@@ -43,7 +42,6 @@ $solarSystem: ("mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptu
   --sun-day: 600;
   --sun-color: #cc9f4c;
 }
-
 //Mixin for styling each planet
 @mixin planetization {
   @each $planet in $solarSystem {
@@ -64,7 +62,6 @@ $solarSystem: ("mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptu
     }
 	}
 }
-
 //Planet rotation animation
 @keyframes planetRotate {
   0%{
@@ -77,22 +74,18 @@ $solarSystem: ("mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptu
 // End definitions
 //---------------------------
 //Start styles
-
 .fiche {
   @include planetization;
 }
-
-
 .planet {
   &__atmosphere {
-    height: 243px;
-    width: 243px;
+    height: 260px;
+    width: 260px;
     position: relative;
     background: radial-gradient(circle at 30% 50%, rgba(255,255,255,.3) 0%, rgba(255,255,255,0) 65%);
-    border-radius: 122px;
+    border-radius: 50%;
     overflow: hidden;
     transition: 0.3s;
-
   }
   &__surface{
     position: absolute;
@@ -102,31 +95,22 @@ $solarSystem: ("mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptu
     background-size: cover;
   }
 }
-
-
-
-
-
 // Basic tags
-
 .card:hover {
   .planet__atmosphere {
     height: 260px;
     width: 260px;
-    border-radius: 130px;
+    border-radius: 50%;
   }
   font-style: italic;
 }
-
 h5 {
   font-family: 'Major Mono Display';
 }
-
 p {
   font-family: "Major Mono Display";
   font-size: 15px;
 }
-
 body {
   background: #000000;
   color: #fff;
