@@ -113,5 +113,19 @@ p {
 }
 body {
   background: #000000;
-  color: #fff;
+  color: #ffffff;
+  position: relative;
+}
+
+.scroll-up-button{
+  position: absolute;
+  right: 25px;
+  bottom: 85px;
+  font-size: 40px;
+  z-index: 200;
+  text-align: right;
+  i:hover {
+    color: rgb(218, 217, 223);
+    cursor: pointer;
+  }
 }
