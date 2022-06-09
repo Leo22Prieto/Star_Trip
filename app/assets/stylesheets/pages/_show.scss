@@ -6,3 +6,15 @@
   width: 150px;
   height: 40px;
 }
+.planet-show {
+  height: 240px !important;
+  width: 240px !important;
+}
+.back-icon {
+  margin: 1% 0 1% 3%;
+  font-size: 25px;
+  transition: transform .2s;
+  i:hover {
+    color: rgb(218, 217, 223);
+  }
+}

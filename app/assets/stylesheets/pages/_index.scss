@@ -101,18 +101,17 @@ $solarSystem: ("mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptu
 }
 .card:hover {
   .planet__atmosphere {
-    height: 260px;
-    width: 260px;
+    height: 245px;
+    width: 245px;
     border-radius: 50%;
   }
-  font-style: italic;
 }
 .index-title {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
-.card-title {
+.card-title-index {
   font-family: 'Major Mono Display';
   background: 50% 100% / 50% 50% no-repeat
   radial-gradient(ellipse at bottom, #fff, transparent, transparent);
