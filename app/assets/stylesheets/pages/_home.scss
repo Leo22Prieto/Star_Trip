@@ -19,7 +19,7 @@ body {
   justify-content: center;
   text-align: center;
   width: 100%;
-  transform: translateY(250px);
+  transform: translateY(115px);
 }
 .container {
 	width: 100%;
@@ -55,7 +55,7 @@ h1.main, p.demos {
 }
 .sp-container h2 {
 	position: absolute;
-	top: 50%;
+	top: 33%;
 	line-height: 100px;
 	height: 90px;
 	margin-top: -50px;
@@ -170,7 +170,6 @@ h1.main, p.demos {
 	color: #fff;
 }
 /**/
-
 @-webkit-keyframes blurFadeInOut {
 	0% {
 		opacity: 0;
@@ -230,7 +229,6 @@ h1.main, p.demos {
 	}
 }
 /**/
-
 @-moz-keyframes blurFadeInOut {
 	0% {
 		opacity: 0;
@@ -285,7 +283,6 @@ h1.main, p.demos {
 	}
 }
 /**/
-
 @keyframes blurFadeInOut {
 	0% {
 		opacity: 0;

@@ -1,9 +1,11 @@
-<h2 class="card-title">CHOOSE YOUR TRIP</h2>
-<div class="row justify-content-center row-cols-auto pt-4">
+<div class="index-title">
+  <h2 class="card-title">ChooSe YouR trIp</h2>
+</div>
+<div class="row justify-content-center row-cols-auto pt-4 mb-5">
   <% @trips.each do |trip| %>
     <div class="col p-4">
       <%= link_to trip_path(trip) do %>
-        <div class="card p-3" style="background-color: rgba(245, 245, 245, 0); border-color: rgba(245, 245, 245, 0.5)">
+        <div class="card p-3">
           <% case trip.destination %>
           <% when "Pluto" %>
             <div class="fiche--pluto">
@@ -28,10 +30,10 @@
               <div class= "planet__surface"></div>
             </div>
             <div class="card-body p-3 fiche-text">
-              <h5 class="card-title text-center border-bottom border-dark p-3"><%= trip.destination %></h5>
-              <p class="card-text"> depArture: <%= trip.departure_date %></p>
-              <p class="card-text"> arriVal: <%= trip.arrival_date %></p>
-              <p class="card-text"> pRice: <%= trip.price %> $</p>
+              <h5 class="card-title text-center border-bottom border-dark p-3"><strong><%= trip.destination %></strong></h5>
+              <p class="card-text"> <strong>depArture:</strong> <%= trip.departure_date %></p>
+              <p class="card-text"> <strong>arriVal:</strong> <%= trip.arrival_date %></p>
+              <p class="card-text"> <strong>pRice:</strong> <%= trip.price %> $</p>
             </div>
           </div>
         </div>
