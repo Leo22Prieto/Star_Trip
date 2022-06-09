@@ -1,35 +1,47 @@
-<div class="col mt-4 container-show">
-  <div class="card p-3 card-show" style="background-color: rgba(245, 245, 245, 0); border-color: rgba(245, 245, 245, 0.5)">
-    <% case @trip.destination %>
-    <% when "Pluton" %>
-      <div class="fiche--pluto fiche-show">
-    <% when "Mercure" %>
-      <div class="fiche--mercury fiche-show">
-    <% when "Mars" %>
-      <div class="fiche--mars fiche-show">
-    <% when "Jupiter" %>
-      <div class="fiche--jupiter fiche-show">
-    <% when "Saturne" %>
-      <div class="fiche--saturn fiche-show">
-    <% when "Uranus" %>
-      <div class="fiche--uranus fiche-show">
-    <% when "Neptune" %>
-      <div class="fiche--neptune fiche-show">
-    <% when "Venus" %>
-      <div class="fiche--venus fiche-show">
-    <% end %>
-      <div class="planet__atmosphere">
-        <div class= "planet__surface"></div>
-      </div>
-      <div class="card-body p-3 fiche-text fiche-text-show">
-        <h5 class="card-title text-center border-bottom border-dark p-3"><%= @trip.destination %></h5>
-        <p class="card-text card-text-show"> depArtuRe: <%= @trip.departure_date %></p>
-        <p class="card-text card-text-show"> arRivAl: <%= @trip.arrival_date %></p>
-        <p class="card-text card-text-show"><%= @trip.description %></p>
-        <p class="card-text card-text-show"> priCe: <%= @trip.price %></p>
-        <p class="card-text card-text-show"> pAssengeRs: <%= @trip.number_of_passengers %></p>
+<p class="back-icon">
+  <%= link_to trips_path do %>
+    <i class="fas fa-arrow-circle-left"></i>
+  <% end %>
+</p>
+<div class="container-display">
+  <div class="justify-content col mt-4 container-show">
+    <div class="card p-3 card-show" style="background-color: rgba(245, 245, 245, 0); border-color: rgba(245, 245, 245, 0.5)">
+      <% case @trip.destination %>
+      <% when "Pluto" %>
+        <div class="fiche--pluto fiche-show">
+      <% when "Mercury" %>
+        <div class="fiche--mercury fiche-show">
+      <% when "Mars" %>
+        <div class="fiche--mars fiche-show">
+      <% when "Jupiter" %>
+        <div class="fiche--jupiter fiche-show">
+      <% when "Saturn" %>
+        <div class="fiche--saturn fiche-show">
+      <% when "Uranus" %>
+        <div class="fiche--uranus fiche-show">
+      <% when "Neptune" %>
+        <div class="fiche--neptune fiche-show">
+      <% when "Venus" %>
+        <div class="fiche--venus fiche-show">
+      <% when "Sun" %>
+        <div class="fiche--sun">
+      <% end %>
+        <div class="planet__atmosphere planet-show">
+          <div class= "planet__surface"></div>
+        </div>
+        <div class="card-body p-3 fiche-text fiche-text-show">
+          <h5 class="card-title text-center border-bottom border-dark p-3 card-title-show"><%= @trip.destination %></h5>
+          <p class="card-text card-text-show"> <strong>depArtuRe:</strong> <%= @trip.departure_date %></p><br>
+          <p class="card-text card-text-show"> <strong>arRivAl:</strong> <%= @trip.arrival_date %></p><br>
+          <p class="card-text card-text-show"><%= @trip.description %></p><br>
+          <p class="card-text card-text-show"> <strong>priCe:</strong> <%= @trip.price %> $</p><br>
+          <p class="card-text card-text-show"> <strong>pAssengeRs:</strong> <%= @trip.number_of_passengers %></p>
+        </div>
       </div>
     </div>
   </div>
+  <br>
+  <div class="container-btn">
+    <button class="glow-on-hover btn-booking" type="button"><%= link_to "BOOk NOW", booking_path %></button>
+  </div>
 </div>
-  <p type="button"><%= link_to "RESERVER", booking_path %></p>
