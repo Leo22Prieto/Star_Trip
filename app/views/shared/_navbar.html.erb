@@ -1,19 +1,17 @@
-  <nav id="navbar-example2" class="navbar px-3">
-    <%= link_to root_path, class:"link-logo" do %>
-      <%= image_tag "logo_startrip_white.png", id:"startrip-logo-navbar" %>
-    <% end %>
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <%= link_to new_user_session_path do %>
+<nav id="navbar-example2" class="navbar px-3">
+  <%= link_to root_path, class:"link-logo" do %>
+    <%= image_tag "logo_startrip_white.png", id:"startrip-logo-navbar" %>
+  <% end %>
+  <ul class="nav nav-pills m-2">
+    <li class="nav-item me-2 log_item">
+      <%= link_to new_user_session_path do %>
         <i class="fas fa-user-astronaut"></i>
-        <% end %>
-      </li>
-      <li class="nav-item">
-       <%= link_to destroy_user_session_path, method: :delete do %>
-          <i class="fas fa-sign-out-alt"></i>
-        <% end %>
-      </li>
-    </ul>
-  </nav>
-  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-  </div>
+      <% end %>
+    </li>
+    <li class="nav-item ms-2 log_item">
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i>
+      <% end %>
+    </li>
+  </ul>
+</nav>
