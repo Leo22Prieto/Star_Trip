@@ -78,8 +78,8 @@ $solarSystem: ("mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptu
 }
 .planet {
   &__atmosphere {
-    height: 260px;
-    width: 260px;
+    height: 240px;
+    width: 240px;
     position: relative;
     background: radial-gradient(circle at 30% 50%, rgba(255,255,255,.3) 0%, rgba(255,255,255,0) 65%);
     border-radius: 50%;
