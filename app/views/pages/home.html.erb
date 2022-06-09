@@ -2,15 +2,17 @@
   <div class="sp-container">
 	  <div class="sp-content">
 		  <div class="sp-globe"></div>
-		  <h2 class="frame-1">DREAM BIG, FLY HIGH</h2>
+		  <h2 class="frame-1">WHAT WILL BE YOUR NEXT TRIP IN SPACE?</h2>
 		  <h2 class="frame-5">
-        <span>DREAM,</span>
-        <span>FLY,</span>
-        <span>DISCOVER.</span>
+        <span>STARS,</span>
+        <span>PLANETS,</span>
+        <span>GALAXIES</span>
 		  </h2>
 	  </div>
   </div>
   <div class="home-btn">
-    <button class="glow-on-hover" type="button"><%= link_to "FLY AWAY!", trips_path %></button>
+  <%= link_to trips_path do %>
+    <button class="glow-on-hover" type="button">FLY AWAY!</button>
+  <% end %>
   </div>
 </div>
