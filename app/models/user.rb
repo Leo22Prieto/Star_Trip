@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :trips, through: :bookings
   has_many :bookings
+  has_many :reviews, through: :trips
 
   validates :first_name, :last_name, :email, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true

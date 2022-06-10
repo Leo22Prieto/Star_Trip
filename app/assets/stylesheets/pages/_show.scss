@@ -1,3 +1,8 @@
+.container-all-in-show {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .card-text {
   font-size: 12px;
 }
@@ -17,4 +22,29 @@
   i:hover {
     color: rgb(218, 217, 223);
   }
+}
+.content-review-form {
+  width: 75%;
+  & label {
+    display: none;
+  }
+  & .form-control {
+    display: flex;
+    font-weight: bold;
+  }
+}
+.content-review-display {
+  display: flex;
+  flex-wrap: wrap;
+  width: 77%;
+  margin-top: 40px;
+}
+.reviews-list {
+  list-style: none;
+  & .card-title {
+    width: 45% !important;
+  }
+}
+.card {
+  width: 100% !important;
 }

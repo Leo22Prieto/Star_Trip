@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :trips do
     resources :bookings, only: %i[new create]
+    resources :reviews,  only: %i[new create]
   end
 
   resources :bookings, only: [:destroy]

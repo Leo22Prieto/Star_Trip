@@ -21,7 +21,10 @@ class TripsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @review = Review.new
+    @reviews = Review.all
+  end
 
   def edit; end
 
