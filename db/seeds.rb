@@ -1,5 +1,6 @@
 Trip.destroy_all
 Company.destroy_all
+User.destroy_all
 
 puts 'Start the seeding'
 # Companies
@@ -28,6 +29,9 @@ trips = [
   { destination: 'Uranus', departure_date: '10-09-2024', arrival_date: '30-01-2025', number_of_passengers: 22, description: URANUS, price: 2_300_000, company: voyager },
   { destination: 'Neptune', departure_date: '10-09-2024', arrival_date: '30-01-2025', number_of_passengers: 15, description: NEPTUNE, price: 3_000_000, company: voyager}
 ]
+
+User.create!(first_name: 'Fabrice', last_name: 'Tui', email: 'lewagon@gmail.com', password: 'lewagon')
+
 # Trips creation
 trips.each do |attributes|
   trip = Trip.create!(attributes)

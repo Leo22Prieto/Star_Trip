@@ -44,7 +44,8 @@
         <p class="card-text"><%= @trip.description.downcase %></p>
       </div>
       <div class="row justify-content-center mt-4 mb-1">
-        <button class="glow-on-hover border border-white" type="button"><%= link_to "BOOK NOW", booking_path %></button>
+        <!-- Button trigger modal -->
+        <button type="button" class="glow-on-hover" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK NOW</button>
       </div>
     </div>
   </div>
@@ -55,3 +56,4 @@
   </p>
 </a>
 <%= render 'shared/footer' %>
+<%= render "bookings/new", trip: @trip %>
