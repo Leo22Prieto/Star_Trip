@@ -1,22 +1,18 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-  def new
-    @user = current.user
-    @trip = Trip.find(params[:trip_id])
-    @booking = Booking.new(booking_params)
+
+  def index
+    @bookings = Booking.all
   end
 
   def create
-    @user = current.user
-    @trip = Trip.find(params[:trip_id])
-    @booking = Booking.new(booking_params)
-    @booking.user_id = @user
-    @booking.trip_id = @trip
-    if @booking.save
-      flash.alert = "Congratulations! You have booked a trip to #{@trip.destination}. "
-      redirect_to root_path
-    else
-      render :new
-    end
+    @booking = Booking.new(user_id: params[:user_id], trip_id: params[:trip_id]) if params[:trip_id].present?
+    redirect_to trips_path, notice: "Congratulations! You have booked a trip to booking. " if @booking.save
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to booking_path(@booking)
   end
 end

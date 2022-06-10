@@ -3,15 +3,20 @@
     <%= image_tag "logo_startrip_white.png", id:"startrip-logo-navbar" %>
   <% end %>
   <ul class="nav nav-pills m-2">
-    <li class="nav-item me-2 log_item">
-      <%= link_to new_user_session_path do %>
+    <li class="nav-item dropdown me-2 log_item">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fas fa-user-astronaut"></i>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <%  %>
+      <% if current_user != nil %>
+        <li><%= link_to "My Bookings", bookings_path, class: "dropdown-item" %></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><%= link_to "Disconnect", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+      <% else %>
+        <li><%= link_to "Log In", new_user_session_path, class: "dropdown-item" %></li>
       <% end %>
-    </li>
-    <li class="nav-item ms-2 log_item">
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        <i class="fas fa-sign-out-alt"></i>
-      <% end %>
+      </ul>
     </li>
   </ul>
 </nav>
