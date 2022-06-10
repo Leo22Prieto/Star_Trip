@@ -34,12 +34,12 @@
           <h5 class="card-title text-center border-bottom border-dark p-3"><%= @trip.destination %></h5>
         <div class="row row-cols-2 text-center p-4">
           <div class="col">
-            <p class="card-text"> depArtuRe: <%= @trip.departure_date %></p>
-            <p class="card-text"> arRivAl: <%= @trip.arrival_date %></p>
+            <p class="card-text"> <strong>depArture:</strong> <%= @trip.departure_date %></p>
+            <p class="card-text">  <strong>arriVal:</strong> <%= @trip.arrival_date %></p>
           </div>
           <div class="col">
-            <p class="card-text"> priCe: <%= @trip.price %> $</p>
-            <p class="card-text"> pAssengeRs: <%= @trip.number_of_passengers %></p>
+            <p class="card-text"> <strong>priCe:</strong> <%= @trip.price %> $</p>
+            <p class="card-text"> <strong>pAssengeRs:</strong> <%= @trip.number_of_passengers %></p>
           </div>
         </div>
           <p class="card-text"><%= @trip.description.downcase %></p>
@@ -60,10 +60,10 @@
     <div class="content-review-display mb-4">
       <%# if @reviews.id != nil %>
         <% @reviews.each do |review| %>
-          <div class="reviews-list card mb-2">
-            <h5 class="card-title"><%= review.user.first_name %></h5>
-            <p class="created-at"><%= review.created_at %></p>
-            <p class="content"><%= review.content %></p>
+          <div class="reviews-list card mb-2 p-3">
+            <h5 class="card-title border-bottom border-dark text-family"><strong><%= review.user.first_name %></strong></h5>
+            <p class="created-at text-family"><%= review.created_at %></p>
+            <p class="content text-family"><%= review.content %></p>
           </div>
         <%# end %>
       <% end %>
