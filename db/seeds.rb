@@ -1,6 +1,7 @@
 Trip.destroy_all
 Company.destroy_all
 User.destroy_all
+Booking.destroy_all
 
 puts 'Start the seeding'
 # Companies
