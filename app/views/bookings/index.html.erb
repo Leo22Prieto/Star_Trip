@@ -1,18 +1,22 @@
-<div class="container m-4">
+<div class="container">
   <div class="row justify-content-md-center">
-    <div class="col">
-
+    <div class="col-md-auto pt-5">
+      <h1 style="font-family: 'Raleway'; font-weight: bold">MY BOOKINGS</h1>
     </div>
   </div>
 </div>
-
 <div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-md-auto">
-      <h1>My Bookings</h1>
-    </div>
+  <div class="row justify-content-center row-cols-auto pt-4 mb-5">
+    <% @bookings.each do |booking| %>
+      <div class="col p-4">
+        <div class="card p-3" style="width: 18rem;">
+          <div class="card-body p-3">
+            <h5 class="card-title text-center border-bottom border-dark p-3"><%= booking.trip.destination %></h5>
+            <p class="card-text"> <strong>depArture:</strong> <%= booking.trip.departure_date %></p>
+            <p class="card-text"> <strong>arriVal:</strong> <%= booking.trip.arrival_date %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <% @bookings.each do |booking| %>
-    <%= booking.trip.destination %>
-  <% end %>
 </div>
