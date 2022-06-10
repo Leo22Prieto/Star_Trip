@@ -14,6 +14,7 @@
             <h5 class="card-title text-center border-bottom border-dark p-3"><%= booking.trip.destination %></h5>
             <p class="card-text"> <strong>depArture:</strong> <%= booking.trip.departure_date %></p>
             <p class="card-text"> <strong>arriVal:</strong> <%= booking.trip.arrival_date %></p>
+            <%= link_to "Delete", booking_path(booking), method: :delete, class: "btn btn-light" %>
           </div>
         </div>
       </div>
