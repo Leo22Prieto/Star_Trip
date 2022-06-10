@@ -3,50 +3,70 @@
     <i class="fas fa-arrow-circle-left"></i>
   <% end %>
 </p>
-<div class="container pb-2 mb-5">
-  <div class="card p-3 card" style="background-color: rgba(245, 245, 245, 0); border-color: rgba(245, 245, 245, 0.5)">
-    <% case @trip.destination %>
-    <% when "Pluto" %>
-      <div class="fiche--pluto">
-    <% when "Mercury" %>
-      <div class="fiche--mercury">
-    <% when "Mars" %>
-      <div class="fiche--mars">
-    <% when "Jupiter" %>
-      <div class="fiche--jupiter">
-    <% when "Saturn" %>
-      <div class="fiche--saturn">
-    <% when "Uranus" %>
-      <div class="fiche--uranus">
-    <% when "Neptune" %>
-      <div class="fiche--neptune">
-    <% when "Venus" %>
-      <div class="fiche--venus">
-    <% when "Sun" %>
-      <div class="fiche--sun">
-    <% end %>
-      <div class="row justify-content-center m-2">
-        <div class="planet__atmosphere planet-show">
-          <div class= "planet__surface"></div>
+<div class="container-all-in-show">
+  <div class="container pb-2 mb-5">
+    <div class="card p-3 card" style="background-color: rgba(245, 245, 245, 0); border-color: rgba(245, 245, 245, 0.5)">
+      <% case @trip.destination %>
+      <% when "Pluto" %>
+        <div class="fiche--pluto">
+      <% when "Mercury" %>
+        <div class="fiche--mercury">
+      <% when "Mars" %>
+        <div class="fiche--mars">
+      <% when "Jupiter" %>
+        <div class="fiche--jupiter">
+      <% when "Saturn" %>
+        <div class="fiche--saturn">
+      <% when "Uranus" %>
+        <div class="fiche--uranus">
+      <% when "Neptune" %>
+        <div class="fiche--neptune">
+      <% when "Venus" %>
+        <div class="fiche--venus">
+      <% when "Sun" %>
+        <div class="fiche--sun">
+      <% end %>
+        <div class="row justify-content-center m-2">
+          <div class="planet__atmosphere planet-show">
+            <div class= "planet__surface"></div>
+          </div>
+        </div>
+          <h5 class="card-title text-center border-bottom border-dark p-3"><%= @trip.destination %></h5>
+        <div class="row row-cols-2 text-center p-4">
+          <div class="col">
+            <p class="card-text"> depArtuRe: <%= @trip.departure_date %></p>
+            <p class="card-text"> arRivAl: <%= @trip.arrival_date %></p>
+          </div>
+          <div class="col">
+            <p class="card-text"> priCe: <%= @trip.price %> $</p>
+            <p class="card-text"> pAssengeRs: <%= @trip.number_of_passengers %></p>
+          </div>
+        </div>
+          <p class="card-text"><%= @trip.description.downcase %></p>
+        </div>
+        <div class="row justify-content-center mt-4 mb-1">
+          <!-- Button trigger modal -->
+          <button type="button" class="glow-on-hover" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK NOW</button>
         </div>
       </div>
-        <h5 class="card-title text-center border-bottom border-dark p-3"><%= @trip.destination %></h5>
-      <div class="row row-cols-2 text-center p-4">
-        <div class="col">
-          <p class="card-text"> depArtuRe: <%= @trip.departure_date %></p>
-          <p class="card-text"> arRivAl: <%= @trip.arrival_date %></p>
-        </div>
-        <div class="col">
-          <p class="card-text"> priCe: <%= @trip.price %> $</p>
-          <p class="card-text"> pAssengeRs: <%= @trip.number_of_passengers %></p>
-        </div>
-      </div>
-        <p class="card-text"><%= @trip.description.downcase %></p>
-      </div>
-      <div class="row justify-content-center mt-4 mb-1">
-        <!-- Button trigger modal -->
-        <button type="button" class="glow-on-hover" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK NOW</button>
-      </div>
+    </div>
+    <div class="content-review-form">
+      <p>Type your review:</p>
+      <%= simple_form_for [@trip, @review] do |f| %>
+        <%= f.input :content %>
+        <%= f.submit class: "glow-on-hover border border-white" %>
+      <% end %>
+    </div>
+    <div class="content-review-display mb-4">
+      <%# if @reviews.id != nil %>
+        <% @reviews.each do |review| %>
+          <div class="reviews-list card mb-2">
+            <h5 class="card-title"><%= review.user.first_name %></h5>
+            <p class="created-at"><%= review.created_at %></p>
+            <p class="content"><%= review.content %></p>
+          </div>
+        <%# end %>
+      <% end %>
     </div>
   </div>
 </div>

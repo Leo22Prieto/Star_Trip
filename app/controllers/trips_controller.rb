@@ -23,6 +23,8 @@ class TripsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @review = Review.new
+    @reviews = Review.all
   end
 
   def edit; end
